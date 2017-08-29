@@ -1,0 +1,20 @@
+.content-outer {
+  top: $header-height;
+  left: $sidebar-width;
+}
+
+.content-inner {
+	max-width: $content-inner-width;
+	margin: auto;
+}
+
+.header {
+	height: $header-height;
+}
+
+.sidebar {
+	background-color: rgba(0, 0, 0, 0.05);
+	box-shadow: rgba(0, 0, 0, 0.05) 2px 0px;
+	padding-top: $header-height;
+	width: $sidebar-width;
+}
