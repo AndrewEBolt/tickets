@@ -54,7 +54,7 @@ class TicketRowEdit extends React.Component<Props, State> {
 					<input type="text" value={this.state.price} onChange={(event) => { this.updateFormField('price', event.target.value) }} />
 				</td>
 				<td className="py2 muted">
-					<input type="number" value={this.state.quantity} onChange={(event) => { this.updateFormField('quantity', event.target.value) }} />
+					<input type="number" value={this.state.quantity} onChange={(event) => { this.updateFormField('quantity', parseInt(event.target.value, 10)) }} />
 				</td>
 				<td className="py2 muted">
 					<select name="select" value={this.state.status} onChange={(event) => { this.updateFormField('status', event.target.value) }}>

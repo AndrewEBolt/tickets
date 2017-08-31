@@ -10,7 +10,6 @@ const mapStateToProps = (state) => {
 	if (eventList && selectedEventId) {
 		Object.values(eventList).forEach((events) => {
 			events.forEach((event) => {
-				console.log(event)
 				if (event.id === selectedEventId) {
 					eventTitle = event.attributes.title
 				}
