@@ -13,6 +13,7 @@ import App from '../shared/app'
 import { APP_CONTAINER_SELECTOR } from '../shared/config'
 import { isProd } from '../shared/util'
 import eventReducer from '../shared/reducer/event'
+import ticketReducer from '../shared/reducer/ticket'
 
 import '../styles/core.scss'
 
@@ -23,9 +24,12 @@ const preloadedState = window.__PRELOADED_STATE__
 /* eslint-enable no-underscore-dangle */
 
 
-const store = createStore(combineReducers({ events: eventReducer }),
-	{ events: Immutable.fromJS(preloadedState.events) },
-	composeEnhancers(applyMiddleware(thunkMiddleware)),
+const store = createStore(combineReducers({
+	events: eventReducer,
+	tickets: ticketReducer,
+}),
+{ events: Immutable.fromJS(preloadedState.events) },
+composeEnhancers(applyMiddleware(thunkMiddleware)),
 )
 
 const rootEl = document.querySelector(APP_CONTAINER_SELECTOR)

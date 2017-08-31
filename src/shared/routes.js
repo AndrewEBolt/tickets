@@ -1,6 +1,4 @@
 // @flow
 
-
 export const HOME_PAGE_ROUTE = '/'
-
-// export const helloEndpointRoute = (num: ?number) => `/ajax/hello/${num || ':num'}`
+export const TICKET_PAGE_ROUTE = '/events/:num'

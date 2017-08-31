@@ -35,4 +35,8 @@ export default {
 	devServer: {
 		port: WDS_PORT,
 	},
+	node: {
+		fs: 'empty',
+	},
+	target: 'web',
 }

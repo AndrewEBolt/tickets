@@ -5,6 +5,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 
 import eventReducer from '../shared/reducer/event'
+import ticketReducer from '../shared/reducer/ticket'
 
 const initStore = (plainPartialState: ?Object) => {
 	const preloadedState = plainPartialState ? {} : undefined
@@ -15,8 +16,11 @@ const initStore = (plainPartialState: ?Object) => {
 			.merge(Immutable.fromJS(plainPartialState.events))
 	}
 
-	return createStore(combineReducers({ events: eventReducer }),
-		preloadedState, applyMiddleware(thunkMiddleware))
+	return createStore(combineReducers({
+		events: eventReducer,
+		tickets: ticketReducer,
+	}),
+	preloadedState, applyMiddleware(thunkMiddleware))
 }
 
 export default initStore

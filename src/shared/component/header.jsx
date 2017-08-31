@@ -2,9 +2,15 @@
 
 import React from 'react'
 
-const Header = () => (
-	<div className="header fixed top-0 left-0 right-0 z3 flex items-center bg-blue px2">
-		<h3 className="h3 regular white">Select an Event</h3>
+type Props = {
+	eventTitle?: string,
+}
+
+const Header = (props: Props) => (
+	<div className="header fixed top-0 left-0 right-0 z3 flex items-center bg-blue">
+		<h1 className="h1 pl3 white regular">
+			{props.eventTitle}
+		</h1>
 	</div>
 )
 

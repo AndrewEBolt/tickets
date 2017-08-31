@@ -2,14 +2,15 @@
 
 import { connect } from 'react-redux'
 
+import { fetchEvents } from '../action/event'
 import Sidebar from '../component/sidebar'
 
 const mapStateToProps = state => ({
-	events: state.events.get('events').toJS(),
+	eventList: state.events.get('eventList').toJS(),
 })
 
-// const mapDispatchToProps = dispatch => ({
-// removeFromCart: (index) => { dispatch(removeFromCart(index)) },
-// })
+const mapDispatchToProps = dispatch => ({
+	fetchEvents: () => { dispatch(fetchEvents()) },
+})
 
-export default connect(mapStateToProps)(Sidebar)
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)

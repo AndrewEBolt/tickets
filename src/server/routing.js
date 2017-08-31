@@ -2,10 +2,12 @@
 
 import {
 	homePage,
+	ticketPage,
 } from './controller'
 
 import {
 	HOME_PAGE_ROUTE,
+	TICKET_PAGE_ROUTE,
 } from '../shared/routes'
 
 import renderApp from './render-app'
@@ -15,20 +17,8 @@ export default (app: Object) => {
 		res.send(renderApp(req.url, homePage()))
 	})
 
-	app.get(HELLO_PAGE_ROUTE, (req, res) => {
-		res.send(renderApp(req.url, helloPage()))
-	})
-
-	app.get(HELLO_ASYNC_PAGE_ROUTE, (req, res) => {
-		res.send(renderApp(req.url, helloAsyncPage()))
-	})
-
-	app.get(helloEndpointRoute(), (req, res) => {
-		res.json(helloEndpoint(req.params.num))
-	})
-
-	app.get('/500', () => {
-		throw Error('Fake Internal Server Error')
+	app.get(TICKET_PAGE_ROUTE, (req, res) => {
+		res.send(renderApp(req.url, ticketPage()))
 	})
 
 	app.get('*', (req, res) => {

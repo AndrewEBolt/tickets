@@ -10,11 +10,11 @@
 
 .header {
 	height: $header-height;
+	padding-left: $sidebar-width;
 }
 
 .sidebar {
-	background-color: rgba(0, 0, 0, 0.05);
+	background-color: $bg-gray;
 	box-shadow: rgba(0, 0, 0, 0.05) 2px 0px;
-	padding-top: $header-height;
 	width: $sidebar-width;
 }

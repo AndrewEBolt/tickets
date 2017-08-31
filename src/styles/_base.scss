@@ -4,8 +4,11 @@ Application Settings Go Here
 
 $blue: #3F51B5;
 $gray: #D8D8D8;
+$green: #34CB7B;
+$bg-gray: rgba(0, 0, 0, 0.05);
 
 @import './themes/default.scss';
+@import './modules/background.scss';
 @import './modules/layout.scss';
 @import './modules/typography.scss';
 @import '~normalize.css/normalize';
